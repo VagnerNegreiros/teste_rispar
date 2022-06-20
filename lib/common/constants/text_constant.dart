@@ -9,4 +9,7 @@ class TextConstant{
   static const String itsYour = "E seu ";
   static const String emailQuestion = "e-mail?";
   static const String emailExample = "seuemail@email.com";
+  static const String emailInvalid = "Email inválido";
+  static const String nameInvalid = "O nome deve conter caracteres de a-z ou A-Z";
+
 }
