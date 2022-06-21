@@ -22,7 +22,6 @@ class TextConstant{
   static const String amountInvalid = "Valor inválido";
   static const String amountNegativeInvalid = "Valor deve ser acima de R\$500";
   static const String amountPositiveInvalid = "Valor deve ser abaixo de R\$300.000";
-
-
+  static const String amountChosen = "Valor escolhido";
 
 }

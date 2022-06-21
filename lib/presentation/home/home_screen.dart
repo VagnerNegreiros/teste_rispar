@@ -4,6 +4,7 @@ import 'package:teste_rispar/common/constants/color_constant.dart';
 import 'package:teste_rispar/common/constants/image_constant.dart';
 import 'package:teste_rispar/common/constants/text_constant.dart';
 import 'package:teste_rispar/presentation/home/home_controller.dart';
+import 'package:teste_rispar/presentation/widgets/bottom_app_bar_custom.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,21 +12,14 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomAppBar(
-          child: Obx(() =>
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 70,
-                color: controller.validate.value == false ? ColorConstant.lightCyan : ColorConstant.cyan,
-                child:
-                MaterialButton(
-                  onPressed: controller.validate.value == false ? null : controller.sendForm,
-                  child: const Text(TextConstant.proceed,
-                    style: TextStyle(fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: ColorConstant.white),),
-                ),
-              ),)
+        bottomNavigationBar:
+        Obx(() =>
+            BottomAppBar(
+                child: BottomAppBarCustom(
+                  validate: controller.validate.value,
+                  onPressed: controller.sendForm,
+                )
+            ),
         ),
       body: SizedBox(
         width: MediaQuery.of(context).size.width,

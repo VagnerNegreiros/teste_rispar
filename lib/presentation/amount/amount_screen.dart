@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:teste_rispar/common/constants/color_constant.dart';
 import 'package:teste_rispar/common/constants/text_constant.dart';
 import 'package:teste_rispar/presentation/amount/amount_controller.dart';
+import 'package:teste_rispar/presentation/widgets/application_toolbar.dart';
+import 'package:teste_rispar/presentation/widgets/bottom_app_bar_custom.dart';
 
 class AmountScreen extends GetView<AmountController> {
   const AmountScreen({Key? key}) : super(key: key);
@@ -11,50 +13,17 @@ class AmountScreen extends GetView<AmountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: const BackButton(
-            color: ColorConstant.cyan,
-          ),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          title: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Stack(
-            alignment: Alignment.centerLeft,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 40),
-                width: MediaQuery.of(context).size.width/2,
-                height: 4,
-                color: ColorConstant.gray,
-              ),
-              Container(
-                margin: const EdgeInsets.only(left: 40),
-                width: (MediaQuery.of(context).size.width/2)/3,
-                height: 4,
-                color: ColorConstant.cyan,
-              ),
-            ],
+        appBar: const ApplicationToolbar(dividerContent:3),
+        bottomNavigationBar:
+        Obx(() =>
+            BottomAppBar(
+                child: BottomAppBarCustom(
+                  validate: controller.validate.value,
+                  onPressed: controller.sendForm,
+                )
+            ),
         ),
-          ),
-      ),
-        bottomNavigationBar: BottomAppBar(
-            child: Obx(() =>
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 70,
-                  color: controller.validate.value == false ? ColorConstant.lightCyan : ColorConstant.cyan,
-                  child:
-                  MaterialButton(
-                    onPressed: controller.validate.value == false ? null : controller.sendForm,
-                    child: const Text(TextConstant.proceed,
-                      style: TextStyle(fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: ColorConstant.white),),
-                  ),
-                ),)
-        ),
+
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
