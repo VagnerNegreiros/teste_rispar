@@ -95,7 +95,11 @@ class HomeScreen extends GetView<HomeController> {
                             return controller.validateName(value!);
                           },
                           decoration: const InputDecoration(hintText: TextConstant.fullName,
-                              hintStyle: TextStyle(fontSize: 18) ),
+                              hintStyle: TextStyle(fontSize: 18),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.cyan),
+                            ),
+                          ),
                         ),
                       ),
                       Container(
@@ -125,7 +129,11 @@ class HomeScreen extends GetView<HomeController> {
                             return controller.validateEmail(value!);
                           },
                           decoration: const InputDecoration(hintText: TextConstant.emailExample,
-                              hintStyle: TextStyle(fontSize: 18) ),
+                              hintStyle: TextStyle(fontSize: 18),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.cyan),
+                            ),
+                          ),
                         ),
                       ),
                     ],
