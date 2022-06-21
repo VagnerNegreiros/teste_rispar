@@ -18,8 +18,9 @@ class AmountScreen extends GetView<AmountController> {
         Obx(() =>
             BottomAppBar(
                 child: BottomAppBarCustom(
+                  text: TextConstant.proceed,
                   validate: controller.validate.value,
-                  onPressed: controller.sendForm,
+                  onPressed: controller.sendData,
                 )
             ),
         ),
@@ -35,7 +36,7 @@ class AmountScreen extends GetView<AmountController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 20,bottom: 10),
                   child: RichText(
                       text: const TextSpan(
                           style: TextStyle(
@@ -82,13 +83,10 @@ class AmountScreen extends GetView<AmountController> {
                       child: TextFormField(
                         controller: controller.amountController,
                         onChanged: controller.onChanged,
+                        keyboardType: TextInputType.number,
                         validator: (value) {
                           return controller.validateAmount(value!);
                         },
-                        keyboardType: TextInputType.number,
-                        inputFormatters: <TextInputFormatter>[
-                          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                        ],
 
                         style: const TextStyle(
                             color: ColorConstant.cyan,
@@ -97,26 +95,15 @@ class AmountScreen extends GetView<AmountController> {
                         ),
 
                         decoration: const InputDecoration(
-                          hintText: TextConstant.number25000,
-                          hintStyle: TextStyle(
-                                color: ColorConstant.cyan,
-                                fontSize: 35,
-                            fontWeight: FontWeight.bold
-                          ),
-
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.cyan),
                           ),
-
-                          prefixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
-                          prefixIcon: Text(TextConstant.symbolCifrao,
-                            style: TextStyle(
-                                color: ColorConstant.cyan,
-                                fontSize: 35,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
                         ),
+
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(13),
+                        ],
+
                       ),
                     ),
                   ),

@@ -16,8 +16,9 @@ class HomeScreen extends GetView<HomeController> {
         Obx(() =>
             BottomAppBar(
                 child: BottomAppBarCustom(
+                  text: TextConstant.proceed,
                   validate: controller.validate.value,
-                  onPressed: controller.sendForm,
+                  onPressed: controller.sendData,
                 )
             ),
         ),

@@ -14,6 +14,7 @@ dependencies:
 
   get: ^4.6.5
   flutter_masked_text2: ^0.9.1
+  syncfusion_flutter_sliders: ^20.1.61
 
 
 

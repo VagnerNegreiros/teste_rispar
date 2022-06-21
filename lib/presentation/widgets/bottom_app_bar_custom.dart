@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:teste_rispar/common/constants/color_constant.dart';
-import 'package:teste_rispar/common/constants/text_constant.dart';
 
 class BottomAppBarCustom extends StatelessWidget {
+  final String text;
   final bool validate;
   final VoidCallback onPressed;
-  const BottomAppBarCustom({Key? key, required this.validate, required this.onPressed}) : super(key: key);
+  const BottomAppBarCustom({Key? key, required this.text, this.validate = true, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class BottomAppBarCustom extends StatelessWidget {
       child:
       MaterialButton(
         onPressed: validate == false ? null : onPressed,
-        child: const Text(TextConstant.proceed,
-          style: TextStyle(fontSize: 22,
+        child: Text(text,
+          style: const TextStyle(fontSize: 22,
               fontWeight: FontWeight.bold,
               color: ColorConstant.white),),
       ),

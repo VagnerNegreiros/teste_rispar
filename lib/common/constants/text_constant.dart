@@ -23,5 +23,13 @@ class TextConstant{
   static const String amountNegativeInvalid = "Valor deve ser acima de R\$500";
   static const String amountPositiveInvalid = "Valor deve ser abaixo de R\$300.000";
   static const String amountChosen = "Valor escolhido";
+  static const String addGuarantee = "Adicionar garantia";
+  static const String protectedWarranty = "Garantia protegida";
+  static const String textWarranty = "Bitcoin caiu? Fique tranquilo! Na garantia protegida, você não recebe chamada de margem e não é liquidado.";
+  static const String choiceTheF = "Escolha a ";
+  static const String choiceTheM = "Escolha o ";
+  static const String quantityInstallments = "quantidade de parcelas";
+  static const String percentageWarranty = "percentual de garantia";
+  static const String continueWithoutWarranty = "Continuar sem garantia";
 
 }

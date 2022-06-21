@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teste_rispar/common/constants/text_constant.dart';
-import 'package:teste_rispar/data/models/simulation_model.dart';
+import 'package:teste_rispar/data/model/simulation_model.dart';
 import 'package:teste_rispar/routes/app_routues.dart';
 
 
@@ -40,7 +40,7 @@ class HomeController extends GetxController{
     return null;
   }
 
-  void sendForm() {
+  void sendData() {
     if (formKey.currentState!.validate()) {
       SimulationModel simulation = SimulationModel(
         name: nameController.value.text,
