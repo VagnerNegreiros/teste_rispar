@@ -24,7 +24,6 @@ class AmountScreen extends GetView<AmountController> {
                 )
             ),
         ),
-
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -87,10 +86,9 @@ class AmountScreen extends GetView<AmountController> {
                         validator: (value) {
                           return controller.validateAmount(value!);
                         },
-
                         style: const TextStyle(
                             color: ColorConstant.cyan,
-                            fontSize: 35,
+                            fontSize: 32,
                             fontWeight: FontWeight.bold
                         ),
 

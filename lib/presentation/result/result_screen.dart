@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teste_rispar/common/constants/color_constant.dart';
@@ -6,7 +5,6 @@ import 'package:teste_rispar/common/constants/text_constant.dart';
 import 'package:teste_rispar/presentation/result/result_controller.dart';
 import 'package:teste_rispar/presentation/result/widgets/item_list_result.dart';
 import 'package:teste_rispar/presentation/result/widgets/processing.dart';
-import 'package:teste_rispar/presentation/widgets/application_toolbar.dart';
 import 'package:teste_rispar/presentation/widgets/bottom_app_bar_custom.dart';
 
 class ResultScreen extends GetView<ResultController> {
@@ -74,23 +72,45 @@ class ResultScreen extends GetView<ResultController> {
               Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 15,bottom: 120),
+                    margin: const EdgeInsets.only(top: 15,bottom: 100),
                     child: const Text(
                       TextConstant.resultSimulation,
                       style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  ItemListResult(text: "Valor escolhido",result: "teste"),
-                  ItemListResult(text: "Garantia",result: "teste"),
-                  ItemListResult(text: "Taxa de juros",result: "teste"),
-                  ItemListResult(text: "Percentual de garantia",result: "teste"),
-                  ItemListResult(text: "Primeiro vencimento",result: "teste"),
-                  ItemListResult(text: "IOF",result: "teste"),
-                  ItemListResult(text: "Tarifa de plataforma",result: "teste"),
-                  ItemListResult(text: "Total financiado",result: "teste"),
-                  ItemListResult(text: "CET mensal",result: "teste"),
-                  ItemListResult(text: "CET anual",result: "teste"),
-                  ItemListResult(text: "Cotação do BTC anual",result: "teste"),
+                  const ItemListResult(
+                      text: TextConstant.amountChosen,
+                      result: "${TextConstant.symbolCifrao}teste"),
+                  const ItemListResult(
+                      text: TextConstant.warranty,
+                      result: "${TextConstant.symbolBTC}teste"),
+                  const ItemListResult(
+                      text: TextConstant.interestRat,
+                      result: "teste${TextConstant.symbolBTCinterestRat}"),
+                  const ItemListResult(
+                      text: TextConstant.percentageWarrantyUpper,
+                      result: "teste${TextConstant.symbolPercentage}"),
+                  const ItemListResult(
+                      text: TextConstant.firstDueDate,
+                      result: "teste"),
+                  const ItemListResult(
+                      text: TextConstant.iof,
+                      result: "${TextConstant.symbolCifrao}teste"),
+                  const ItemListResult(
+                      text: TextConstant.platformFee,
+                      result: "${TextConstant.symbolCifrao}teste"),
+                  const ItemListResult(
+                      text: TextConstant.totalFinanced,
+                      result: "${TextConstant.symbolCifrao}teste"),
+                  const ItemListResult(
+                      text: TextConstant.cetMonthly,
+                      result: "teste${TextConstant.symbolPercentage}"),
+                  const ItemListResult(
+                      text: TextConstant.cetAnnual,
+                      result: "teste${TextConstant.symbolPercentage}"),
+                  const ItemListResult(
+                      text: TextConstant.priceBTC,
+                      result: "${TextConstant.symbolCifrao}teste"),
                 ],
               ),
             ),

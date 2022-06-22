@@ -17,7 +17,7 @@ class BottomAppBarCustom extends StatelessWidget {
       MaterialButton(
         onPressed: validate == false ? null : onPressed,
         child: Text(text,
-          style: const TextStyle(fontSize: 22,
+          style: const TextStyle(fontSize: 18,
               fontWeight: FontWeight.bold,
               color: ColorConstant.white),),
       ),

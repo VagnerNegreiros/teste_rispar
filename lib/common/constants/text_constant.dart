@@ -18,6 +18,9 @@ class TextConstant{
   static const String a = "a ";
   static const String value300000 = "R\$300.000";
   static const String symbolCifrao = "R\$ ";
+  static const String symbolBTC = "₿ ";
+  static const String symbolBTCinterestRat = "% a.m";
+  static const String symbolPercentage = "%";
   static const String number25000 = "25.000";
   static const String amountInvalid = "Valor inválido";
   static const String amountNegativeInvalid = "Valor deve ser acima de R\$500";
@@ -35,5 +38,15 @@ class TextConstant{
   static const String simulatingOrder = "Estamos simulando seu pedido de crédito Rispar...";
   static const String newSimulation = "Nova simulação";
   static const String resultSimulation = "Resultado da simulação";
+  static const String warranty = "Garantia";
+  static const String interestRat = "Taxa de Juros";
+  static const String percentageWarrantyUpper = "Percentual de garantia";
+  static const String firstDueDate = "Primeiro vencimento";
+  static const String iof = "IOF";
+  static const String platformFee = "Tarifa da plataforma";
+  static const String totalFinanced = "Total financiado";
+  static const String cetMonthly = "CET mensal";
+  static const String cetAnnual = "CET anual";
+  static const String priceBTC = "Cotação do BTC";
 
 }

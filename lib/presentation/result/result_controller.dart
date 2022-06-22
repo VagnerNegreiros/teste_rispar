@@ -37,18 +37,8 @@ class ResultController extends GetxController{
     }
     );
 
-    // print(data);
     loading(false);
     visibilityDivider(true);
-
-    // SimulationModel simulation = SimulationModel(
-    //   name: simulationArguments.name,
-    //   email: simulationArguments.email,
-    //   amount: simulationArguments.amount,
-    //   hasProtectedCollateral: simulationArguments.hasProtectedCollateral,
-    // );
-    // print(simulationArgumentstion);
-
   }
 
 }

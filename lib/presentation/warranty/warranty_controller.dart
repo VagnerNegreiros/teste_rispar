@@ -8,9 +8,15 @@ class WarrantyController extends GetxController{
   SimulationModel simulationArguments = Get.arguments[0];
   final String amountValueString = Get.arguments[1];
 
-  final RxDouble rating = 0.0.obs;
-  onChangedSlider(newRating){
-    rating.value = newRating;
+  final RxDouble ratingTerm = 9.0.obs;
+  final RxDouble ratingLTV = 35.0.obs;
+
+  onChangedPortionSlider(newRating){
+    ratingTerm.value = newRating;
+  }
+
+  onChangedWarrantySlider(newRating){
+    ratingLTV.value = newRating;
   }
 
   void sendData(bool warranty) {
@@ -18,9 +24,10 @@ class WarrantyController extends GetxController{
       name: simulationArguments.name,
       email: simulationArguments.email,
       amount: simulationArguments.amount,
+      term: ratingTerm.value.toInt(),
+      ltv: ratingLTV.value.toInt(),
       hasProtectedCollateral: warranty,
     );
-
     Get.toNamed(AppRoutes.result,arguments: simulation);
   }
 
