@@ -20,8 +20,8 @@ class WarrantyController extends GetxController{
       amount: simulationArguments.amount,
       hasProtectedCollateral: warranty,
     );
-    print(simulation);
-    Get.toNamed(AppRoutes.result);
+
+    Get.toNamed(AppRoutes.result,arguments: simulation);
   }
 
 }

@@ -58,7 +58,7 @@ class HomeScreen extends GetView<HomeController> {
                 ),
               ),
               Form(
-                key: controller.formKey,
+                key: controller.formHomeKey,
                 child:
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

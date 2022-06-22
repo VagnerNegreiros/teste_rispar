@@ -12,9 +12,31 @@ import 'package:teste_rispar/routes/app_routues.dart';
 
 class AppScreens{
   static final routes = [
-    GetPage(name: AppRoutes.home, page: () => const HomeScreen(),binding: HomeBinding()),
-    GetPage(name: AppRoutes.amount, page: () => const AmountScreen(),binding: AmountBinding()),
-    GetPage(name: AppRoutes.warranty, page: () => const WarrantyScreen(),binding: WarrantyBinding()),
-    GetPage(name: AppRoutes.result, page: () => const ResultScreen(),binding: ResultBinding()),
+    GetPage(name: AppRoutes.home,
+        page: () => const HomeScreen(),
+        binding: HomeBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)
+
+  ),
+    GetPage(name: AppRoutes.amount,
+        page: () => const AmountScreen(),
+        binding: AmountBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)
+    ),
+    GetPage(name: AppRoutes.warranty,
+        page: () => const WarrantyScreen(),
+        binding: WarrantyBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)
+    ),
+    GetPage(
+        name: AppRoutes.result,
+        page: () => const ResultScreen(),
+        binding: ResultBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)
+    ),
   ];
 }

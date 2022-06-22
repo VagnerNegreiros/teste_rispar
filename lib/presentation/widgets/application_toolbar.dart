@@ -3,7 +3,11 @@ import 'package:teste_rispar/common/constants/color_constant.dart';
 
 class ApplicationToolbar extends StatelessWidget with PreferredSizeWidget{
   final double dividerContent;
-  const ApplicationToolbar({Key? key, required this.dividerContent}) : super(key: key);
+  final bool visibilityDivider;
+  final bool closeIcon;
+  final VoidCallback? closeFunction;
+
+  const ApplicationToolbar({Key? key, required this.dividerContent, this.visibilityDivider = true, this.closeIcon = false, this.closeFunction}) : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -16,7 +20,18 @@ class ApplicationToolbar extends StatelessWidget with PreferredSizeWidget{
       ),
       elevation: 0,
       backgroundColor: Colors.transparent,
-      title: SizedBox(
+      actions: <Widget>[
+        closeIcon ?
+        IconButton(
+          icon: const Icon(
+            Icons.close,
+            color: ColorConstant.cyan,
+          ),
+          onPressed: closeFunction
+        )
+        : Container()
+      ],
+      title: visibilityDivider ? SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(
@@ -36,7 +51,7 @@ class ApplicationToolbar extends StatelessWidget with PreferredSizeWidget{
             ),
           ],
         ),
-      ),
+      ) : Container(),
     );
   }
 }

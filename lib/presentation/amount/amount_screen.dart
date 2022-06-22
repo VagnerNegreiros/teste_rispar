@@ -79,7 +79,7 @@ class AmountScreen extends GetView<AmountController> {
                   height: MediaQuery.of(context).size.height/1.5,
                   child: Center(
                     child: Form(
-                      key: controller.formKey,
+                      key: controller.formAmountKey,
                       child: TextFormField(
                         controller: controller.amountController,
                         onChanged: controller.onChanged,

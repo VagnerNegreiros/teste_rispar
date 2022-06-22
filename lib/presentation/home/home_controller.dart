@@ -8,7 +8,7 @@ import 'package:teste_rispar/routes/app_routues.dart';
 class HomeController extends GetxController{
 
   final RxBool validate = false.obs;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> formHomeKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
 
@@ -41,7 +41,7 @@ class HomeController extends GetxController{
   }
 
   void sendData() {
-    if (formKey.currentState!.validate()) {
+    if (formHomeKey.currentState!.validate()) {
       SimulationModel simulation = SimulationModel(
         name: nameController.value.text,
         email: emailController.value.text

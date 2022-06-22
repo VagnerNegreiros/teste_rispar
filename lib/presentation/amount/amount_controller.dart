@@ -9,7 +9,7 @@ class AmountController extends GetxController{
 
   SimulationModel simulationArguments = Get.arguments;
   final RxBool validate = false.obs;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> formAmountKey = GlobalKey<FormState>();
   final MoneyMaskedTextController amountController = MoneyMaskedTextController(
     decimalSeparator: ',',
     thousandSeparator: '.',
@@ -29,7 +29,7 @@ class AmountController extends GetxController{
   }
 
   String? onChanged(String? value){
-    if(amountController.value.text != ""){
+    if(amountController.value.text != "R\$ 0,00"){
       validate.value = true;
     }else {
       validate.value = false;
@@ -44,7 +44,7 @@ class AmountController extends GetxController{
   }
 
   void sendData() {
-    if (formKey.currentState!.validate()) {
+    if (formAmountKey.currentState!.validate()) {
       double amount = convertAmountStringToDouble(amountController.value.text);
       SimulationModel simulation = SimulationModel(
         name: simulationArguments.name,

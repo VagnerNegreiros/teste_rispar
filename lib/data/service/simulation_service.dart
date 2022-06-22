@@ -2,7 +2,10 @@ import 'package:get/get.dart';
 
 class SimulationService extends GetConnect{
 
-  Future<Response> postSimulation(Map data) => post('https://api.rispar.com.br/acquisition/simulation', data);
+  Future<dynamic> postSimulation(Map data) async{
+   // final response = post('https://api.rispar.com.br/acquisition/simulation', data);
+   //  return response;
+  }
 
 
 }

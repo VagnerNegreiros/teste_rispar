@@ -31,5 +31,9 @@ class TextConstant{
   static const String quantityInstallments = "quantidade de parcelas";
   static const String percentageWarranty = "percentual de garantia";
   static const String continueWithoutWarranty = "Continuar sem garantia";
+  static const String waitMoment = "Aguarde um momento";
+  static const String simulatingOrder = "Estamos simulando seu pedido de crédito Rispar...";
+  static const String newSimulation = "Nova simulação";
+  static const String resultSimulation = "Resultado da simulação";
 
 }

@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:teste_rispar/data/model/simulation_model.dart';
 import 'package:teste_rispar/data/repository/remote/simulation_repository.dart';
 import 'package:teste_rispar/data/service/simulation_service.dart';
+import 'package:teste_rispar/routes/app_routues.dart';
 
 
 class ResultController extends GetxController{
@@ -10,11 +11,16 @@ class ResultController extends GetxController{
 
   final SimulationRepository simulationRepository = Get.put(SimulationRepository(SimulationService()));
   RxBool loading = false.obs;
+  RxBool visibilityDivider = false.obs;
 
   @override
   onReady(){
     sendData();
     super.onReady();
+  }
+
+  void toHome(){
+    Get.offAllNamed(AppRoutes.home);
   }
 
 
@@ -31,8 +37,9 @@ class ResultController extends GetxController{
     }
     );
 
-    print(data);
+    // print(data);
     loading(false);
+    visibilityDivider(true);
 
     // SimulationModel simulation = SimulationModel(
     //   name: simulationArguments.name,
@@ -40,8 +47,7 @@ class ResultController extends GetxController{
     //   amount: simulationArguments.amount,
     //   hasProtectedCollateral: simulationArguments.hasProtectedCollateral,
     // );
-    // print(simulation);
-    // Get.toNamed(AppRoutes.warranty,arguments: simulation);
+    // print(simulationArgumentstion);
 
   }
 

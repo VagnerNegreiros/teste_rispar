@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:teste_rispar/common/constants/color_constant.dart';
 import 'package:teste_rispar/common/constants/text_constant.dart';
 import 'package:teste_rispar/presentation/Warranty/warranty_controller.dart';
+import 'package:teste_rispar/presentation/warranty/widgets/range_slider_shape.dart';
 import 'package:teste_rispar/presentation/widgets/application_toolbar.dart';
 import 'package:teste_rispar/presentation/widgets/bottom_app_bar_custom.dart';
 
