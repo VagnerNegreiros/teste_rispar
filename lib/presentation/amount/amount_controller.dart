@@ -21,7 +21,7 @@ class AmountController extends GetxController{
 
     if(amount > 300000){
       return TextConstant.amountPositiveInvalid;
-    } else if(amount < 500){
+    } else if(amount < 1000){
       return TextConstant.amountNegativeInvalid;
     }else {
       return null;
@@ -47,7 +47,7 @@ class AmountController extends GetxController{
     if (formAmountKey.currentState!.validate()) {
       double amount = convertAmountStringToDouble(amountController.value.text);
       SimulationModel simulation = SimulationModel(
-        name: simulationArguments.name,
+        fullName: simulationArguments.fullName,
         email: simulationArguments.email,
         amount: amount,
       );

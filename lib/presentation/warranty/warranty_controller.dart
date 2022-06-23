@@ -21,7 +21,7 @@ class WarrantyController extends GetxController{
 
   void sendData(bool warranty) {
     SimulationModel simulation = SimulationModel(
-      name: simulationArguments.name,
+      fullName: simulationArguments.fullName,
       email: simulationArguments.email,
       amount: simulationArguments.amount,
       term: ratingTerm.value.toInt(),

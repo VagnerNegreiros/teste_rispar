@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:teste_rispar/common/constants/color_constant.dart';
 import 'package:teste_rispar/common/constants/text_constant.dart';
 import 'package:teste_rispar/presentation/result/result_controller.dart';
@@ -67,8 +68,8 @@ class ResultScreen extends GetView<ResultController> {
           scrollDirection: Axis.vertical,
           child:
             Obx(()=>
-              controller.loading.value ?
-              const Processing() :
+              controller.loading.value || controller.noConnection.value || controller.error.value ?
+              Processing(state: controller.error.value ? "error" : controller.loading.value ? "loading" : "connection") :
               Column(
                 children: [
                   Container(
@@ -78,39 +79,39 @@ class ResultScreen extends GetView<ResultController> {
                       style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const ItemListResult(
+                  ItemListResult(
                       text: TextConstant.amountChosen,
-                      result: "${TextConstant.symbolCifrao}teste"),
-                  const ItemListResult(
+                      result: controller.amountChoseController.text),
+                  ItemListResult(
                       text: TextConstant.warranty,
-                      result: "${TextConstant.symbolBTC}teste"),
-                  const ItemListResult(
+                      result: "${TextConstant.symbolBTC}${controller.simulationResponseModel.collateral}"),
+                  ItemListResult(
                       text: TextConstant.interestRat,
-                      result: "teste${TextConstant.symbolBTCinterestRat}"),
-                  const ItemListResult(
+                      result: "${controller.simulationResponseModel.interestRate}${TextConstant.symbolBTCinterestRat}"),
+                  ItemListResult(
                       text: TextConstant.percentageWarrantyUpper,
-                      result: "teste${TextConstant.symbolPercentage}"),
-                  const ItemListResult(
+                      result: "${controller.simulationResponseModel.ltv}${TextConstant.symbolPercentage}"),
+                  ItemListResult(
                       text: TextConstant.firstDueDate,
-                      result: "teste"),
-                  const ItemListResult(
+                      result: DateFormat("dd/MM/yyyy").format(controller.simulationResponseModel.firstDueDate!)),
+                  ItemListResult(
                       text: TextConstant.iof,
-                      result: "${TextConstant.symbolCifrao}teste"),
-                  const ItemListResult(
+                      result: controller.amountIOFController.text),
+                  ItemListResult(
                       text: TextConstant.platformFee,
-                      result: "${TextConstant.symbolCifrao}teste"),
-                  const ItemListResult(
+                      result: controller.amountPlatformController.text),
+                  ItemListResult(
                       text: TextConstant.totalFinanced,
-                      result: "${TextConstant.symbolCifrao}teste"),
-                  const ItemListResult(
+                      result: controller.amountTotalController.text),
+                  ItemListResult(
                       text: TextConstant.cetMonthly,
-                      result: "teste${TextConstant.symbolPercentage}"),
-                  const ItemListResult(
+                      result: "${controller.simulationResponseModel.monthlyRate}${TextConstant.symbolPercentage}"),
+                  ItemListResult(
                       text: TextConstant.cetAnnual,
-                      result: "teste${TextConstant.symbolPercentage}"),
-                  const ItemListResult(
+                      result: "${controller.simulationResponseModel.annualRate}${TextConstant.symbolPercentage}"),
+                  ItemListResult(
                       text: TextConstant.priceBTC,
-                      result: "${TextConstant.symbolCifrao}teste"),
+                      result: controller.amountBTCController.text),
                 ],
               ),
             ),

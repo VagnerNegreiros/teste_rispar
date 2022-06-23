@@ -1,3 +1,4 @@
+import 'package:http/http.dart';
 import 'package:teste_rispar/data/service/simulation_service.dart';
 
 class SimulationRepository{
@@ -5,7 +6,7 @@ class SimulationRepository{
 
   SimulationRepository(this.api);
 
-  postSimulation(Map data){
-    return api.postSimulation(data);
+  Future<Response>postSimulation(Map data)async{
+    return await api.postSimulation(data);
   }
 }

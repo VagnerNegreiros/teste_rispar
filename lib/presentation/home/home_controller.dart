@@ -43,7 +43,7 @@ class HomeController extends GetxController{
   void sendData() {
     if (formHomeKey.currentState!.validate()) {
       SimulationModel simulation = SimulationModel(
-        name: nameController.value.text,
+        fullName: nameController.value.text,
         email: emailController.value.text
       );
       Get.toNamed(AppRoutes.amount,arguments: simulation);

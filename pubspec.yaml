@@ -16,6 +16,9 @@ dependencies:
   flutter_masked_text2: ^0.9.1
   syncfusion_flutter_sliders: ^20.1.61
   syncfusion_flutter_core: ^20.1.61
+  http: ^0.13.4
+  intl: ^0.17.0
+  connectivity_plus: ^2.3.5
 
 
 dev_dependencies:

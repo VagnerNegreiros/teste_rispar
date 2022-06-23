@@ -62,7 +62,7 @@ class AmountScreen extends GetView<AmountController> {
                         children: [
                           TextSpan(text: TextConstant.insertValue),
                           TextSpan(
-                              text: TextConstant.value500,
+                              text: TextConstant.value1000,
                               style: TextStyle(fontWeight: FontWeight.bold)
                           ),
                           TextSpan(text: TextConstant.a),

@@ -1,16 +1,16 @@
 class SimulationModel {
-  final String? name;
+  final String? fullName;
   final String? email;
   final double? amount;
   final int? term;
   final int? ltv;
   final bool? hasProtectedCollateral;
 
-  SimulationModel({this.name, this.email, this.amount, this.term, this.ltv, this.hasProtectedCollateral});
+  SimulationModel({this.fullName, this.email, this.amount, this.term, this.ltv, this.hasProtectedCollateral});
 
   static SimulationModel fromJson(Map<String, dynamic> json){
     return SimulationModel(
-      name: json['name'],
+      fullName: json['fullname'],
       email: json['email'],
       amount: json['amount'],
       term: json['term'],
@@ -21,17 +21,17 @@ class SimulationModel {
 
   Map<String, dynamic> toJson(){
     return {
-      "name": name,
+      "fullname": fullName,
       "email": email,
       "amount": amount,
       "term": term,
       "ltv": ltv,
-      "hasProtectedCollateral": hasProtectedCollateral,
+      "has_protected_collateral": hasProtectedCollateral,
     };
   }
 
   @override
   String toString() {
-    return 'SimulationModel{name: $name, email: $email, ltv: $ltv, amount: $amount, term: $term, hasProtectedCollateral: $hasProtectedCollateral}';
+    return 'SimulationModel{fullName: $fullName, email: $email, ltv: $ltv, amount: $amount, term: $term, hasProtectedCollateral: $hasProtectedCollateral}';
   }
 }
