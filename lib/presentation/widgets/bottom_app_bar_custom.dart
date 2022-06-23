@@ -15,9 +15,10 @@ class BottomAppBarCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: MediaQuery.of(context).size.width,
       height: 70,
+      color: validate == false ? ColorConstant.lightCyan : ColorConstant.cyan,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           primary: validate == false ? ColorConstant.lightCyan : ColorConstant.cyan,
