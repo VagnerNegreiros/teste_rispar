@@ -4,9 +4,7 @@ import 'package:teste_rispar/common/constants/text_constant.dart';
 import 'package:teste_rispar/data/model/simulation_model.dart';
 import 'package:teste_rispar/routes/app_routues.dart';
 
-
-class HomeController extends GetxController{
-
+class HomeController extends GetxController {
   final RxBool validate = false.obs;
   GlobalKey<FormState> formHomeKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
@@ -14,7 +12,7 @@ class HomeController extends GetxController{
 
   String? validateName(String value) {
     String pattern = r'(^[a-zA-Z ]*$)';
-    RegExp regExp =  RegExp(pattern);
+    RegExp regExp = RegExp(pattern);
     if (!regExp.hasMatch(value)) {
       return TextConstant.nameInvalid;
     }
@@ -22,19 +20,20 @@ class HomeController extends GetxController{
   }
 
   String? validateEmail(String value) {
-    String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    String pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regExp = RegExp(pattern);
-    if(!regExp.hasMatch(value)){
+    if (!regExp.hasMatch(value)) {
       return TextConstant.emailInvalid;
-    }else {
+    } else {
       return null;
     }
   }
 
-  String? onChanged(String? value){
-    if(nameController.value.text != "" && emailController.value.text != ""){
+  String? onChanged(String? value) {
+    if (nameController.value.text != "" && emailController.value.text != "") {
       validate.value = true;
-    }else {
+    } else {
       validate.value = false;
     }
     return null;
@@ -43,11 +42,9 @@ class HomeController extends GetxController{
   void sendData() {
     if (formHomeKey.currentState!.validate()) {
       SimulationModel simulation = SimulationModel(
-        fullName: nameController.value.text,
-        email: emailController.value.text
-      );
-      Get.toNamed(AppRoutes.amount,arguments: simulation);
+          fullName: nameController.value.text,
+          email: emailController.value.text);
+      Get.toNamed(AppRoutes.amount, arguments: simulation);
     }
   }
-
 }

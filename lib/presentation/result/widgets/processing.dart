@@ -4,19 +4,22 @@ import 'package:teste_rispar/common/constants/color_constant.dart';
 import 'package:teste_rispar/common/constants/text_constant.dart';
 
 class Processing extends StatelessWidget {
-
   final String state;
 
   const Processing({Key? key, required this.state}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return state == "error" ? buildError() : state == "loading" ? buildLoad() : buildNoConnection();
+    return state == "error"
+        ? buildError()
+        : state == "loading"
+            ? buildLoad()
+            : buildNoConnection();
   }
 
-  Widget buildError(){
+  Widget buildError() {
     return Container(
-      margin: const EdgeInsets.only(left: 25,right: 25,top: 120),
+      margin: const EdgeInsets.only(left: 25, right: 25, top: 120),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,9 +51,9 @@ class Processing extends StatelessWidget {
     );
   }
 
-  Widget buildLoad(){
+  Widget buildLoad() {
     return Container(
-      margin: const EdgeInsets.only(left: 25,right: 25,top: 120),
+      margin: const EdgeInsets.only(left: 25, right: 25, top: 120),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,9 +85,9 @@ class Processing extends StatelessWidget {
     );
   }
 
-  Widget buildNoConnection(){
+  Widget buildNoConnection() {
     return Container(
-      margin: const EdgeInsets.only(left: 25,right: 25,top: 120),
+      margin: const EdgeInsets.only(left: 25, right: 25, top: 120),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -13,16 +13,14 @@ class AmountScreen extends GetView<AmountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const ApplicationToolbar(dividerContent:3),
-        bottomNavigationBar:
-        Obx(() =>
-            BottomAppBar(
-                child: BottomAppBarCustom(
-                  text: TextConstant.proceed,
-                  validate: controller.validate.value,
-                  onPressed: controller.sendData,
-                )
-            ),
+        appBar: const ApplicationToolbar(dividerContent: 3),
+        bottomNavigationBar: Obx(
+          () => BottomAppBar(
+              child: BottomAppBarCustom(
+            text: TextConstant.proceed,
+            validate: controller.validate.value,
+            onPressed: controller.sendData,
+          )),
         ),
         body: Container(
           width: MediaQuery.of(context).size.width,
@@ -35,47 +33,37 @@ class AmountScreen extends GetView<AmountController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 20,bottom: 10),
+                  margin: const EdgeInsets.only(top: 20, bottom: 10),
                   child: RichText(
                       text: const TextSpan(
                           style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
-                              color: ColorConstant.black
-                          ),
+                              color: ColorConstant.black),
                           children: [
-                            TextSpan(
-                                text: TextConstant.howMuch,
-                                style: TextStyle(color: ColorConstant.cyan)
-                            ),
-                            TextSpan(text: TextConstant.youNeedQuestion)
-                          ]
-                      )
-                  ),
+                        TextSpan(
+                            text: TextConstant.howMuch,
+                            style: TextStyle(color: ColorConstant.cyan)),
+                        TextSpan(text: TextConstant.youNeedQuestion)
+                      ])),
                 ),
                 RichText(
                     text: const TextSpan(
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: ColorConstant.black
-                        ),
+                        style:
+                            TextStyle(fontSize: 18, color: ColorConstant.black),
                         children: [
-                          TextSpan(text: TextConstant.insertValue),
-                          TextSpan(
-                              text: TextConstant.value1000,
-                              style: TextStyle(fontWeight: FontWeight.bold)
-                          ),
-                          TextSpan(text: TextConstant.a),
-                          TextSpan(
-                              text: TextConstant.value300000,
-                              style: TextStyle(fontWeight: FontWeight.bold)
-                          ),
-                        ]
-                    )
-                ),
+                      TextSpan(text: TextConstant.insertValue),
+                      TextSpan(
+                          text: TextConstant.value1000,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      TextSpan(text: TextConstant.a),
+                      TextSpan(
+                          text: TextConstant.value300000,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ])),
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height/1.5,
+                  height: MediaQuery.of(context).size.height / 1.5,
                   child: Center(
                     child: Form(
                       key: controller.formAmountKey,
@@ -89,19 +77,15 @@ class AmountScreen extends GetView<AmountController> {
                         style: const TextStyle(
                             color: ColorConstant.cyan,
                             fontSize: 32,
-                            fontWeight: FontWeight.bold
-                        ),
-
+                            fontWeight: FontWeight.bold),
                         decoration: const InputDecoration(
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.cyan),
                           ),
                         ),
-
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(13),
                         ],
-
                       ),
                     ),
                   ),
@@ -109,7 +93,6 @@ class AmountScreen extends GetView<AmountController> {
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:teste_rispar/common/constants/color_constant.dart';
+
 class ItemListResult extends StatelessWidget {
   final String text;
   final String result;
-  const ItemListResult({Key? key, required this.text, required this.result}) : super(key: key);
+
+  const ItemListResult({Key? key, required this.text, required this.result})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,23 +20,22 @@ class ItemListResult extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(text,
+                  Text(
+                    text,
                     style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold
-                    ),
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(result,
+                  Text(
+                    result,
                     style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: ColorConstant.darkGray
-                    ),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: ColorConstant.darkGray),
                   )
                 ],
               ),
